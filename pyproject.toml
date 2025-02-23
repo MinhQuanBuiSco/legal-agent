@@ -1,0 +1,12 @@
+[project]
+name = "legal-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=3.3.2",
+    "nltk>=3.9.1",
+    "spacy>=3.8.4",
+    "transformers>=4.49.0",
+]
