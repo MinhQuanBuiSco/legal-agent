@@ -6,8 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
-# Database path
-src/legal_agent/database/
+# database
+src/legal_agent/database/*.json
+src/legal_agent/database/*.arrow
 
 # Distribution / packaging
 .Python
