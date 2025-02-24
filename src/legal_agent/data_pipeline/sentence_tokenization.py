@@ -26,7 +26,6 @@ def document_segmentation(sentence: str, max_tokens: int = 500) -> list:
     """
     tokenized = tokenizer(sentence, add_special_tokens=False)
     input_ids = tokenized["input_ids"]
-
     chunks = []
     for i in range(0, len(input_ids), max_tokens):
         sub_chunk_ids = input_ids[i : i + max_tokens]

@@ -2,8 +2,8 @@ from transformers import AutoTokenizer
 
 from legal_agent.data_pipeline.sentence_tokenization import \
     document_segmentation
-from legal_agent.data_pipeline.text_processing import \
-    normalize_text
+from legal_agent.data_pipeline.text_processing import normalize_text
+
 
 def test_document_segmentation():
     tokenizer = AutoTokenizer.from_pretrained("Jean-Baptiste/roberta-large-ner-english")
@@ -11,6 +11,7 @@ def test_document_segmentation():
     chunks = document_segmentation(sentence, max_tokens=512)
     for chunk in chunks:
         assert len(tokenizer(chunk, add_special_tokens=False)) <= 20
+
 
 def test_text_processing():
     assert normalize_text("Non-ASCII ✨ characters") == "Non-ASCII  characters"

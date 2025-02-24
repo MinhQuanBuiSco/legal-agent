@@ -1,0 +1,170 @@
+{
+  "builder_name": "arrow",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "case-law",
+  "dataset_size": 9524945382,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00000-of-00020.arrow": {
+      "num_bytes": 386761272,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00001-of-00020.arrow": {
+      "num_bytes": 529851072,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00002-of-00020.arrow": {
+      "num_bytes": 506190096,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00003-of-00020.arrow": {
+      "num_bytes": 364149408,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00004-of-00020.arrow": {
+      "num_bytes": 400241128,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00005-of-00020.arrow": {
+      "num_bytes": 456911584,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00006-of-00020.arrow": {
+      "num_bytes": 521515856,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00007-of-00020.arrow": {
+      "num_bytes": 521181648,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00008-of-00020.arrow": {
+      "num_bytes": 536471280,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00009-of-00020.arrow": {
+      "num_bytes": 472242008,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00010-of-00020.arrow": {
+      "num_bytes": 440087336,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00011-of-00020.arrow": {
+      "num_bytes": 364145736,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00012-of-00020.arrow": {
+      "num_bytes": 482189056,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00013-of-00020.arrow": {
+      "num_bytes": 566026776,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00014-of-00020.arrow": {
+      "num_bytes": 477315400,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00015-of-00020.arrow": {
+      "num_bytes": 393524624,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00016-of-00020.arrow": {
+      "num_bytes": 529381552,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00017-of-00020.arrow": {
+      "num_bytes": 447919176,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00018-of-00020.arrow": {
+      "num_bytes": 590010512,
+      "checksum": null
+    },
+    "hf://datasets/HFforLegal/case-law@dc0151fad300088cc7c21773bd3d680e0a514311/data/us-00019-of-00020.arrow": {
+      "num_bytes": 539262728,
+      "checksum": null
+    }
+  },
+  "download_size": 9525378248,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "title": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "state": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "issuer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "document": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "timestamp": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "sentence": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "entities": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "embedding": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 19050323630,
+  "splits": {
+    "us": {
+      "name": "us",
+      "num_bytes": 9524945382,
+      "num_examples": 528777,
+      "shard_lengths": [
+        32439,
+        25439,
+        28439,
+        39439,
+        28439,
+        26439,
+        25439,
+        26439,
+        26439,
+        30439,
+        33878,
+        27439,
+        22439,
+        30439,
+        31439,
+        29439,
+        19438,
+        26438,
+        18438
+      ],
+      "dataset_name": "case-law"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
