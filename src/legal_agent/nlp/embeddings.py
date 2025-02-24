@@ -1,7 +1,7 @@
-import torch
 import numpy as np
-from transformers import AutoTokenizer, AutoModel
-from datasets import load_dataset
+import torch
+# from datasets import load_dataset
+from transformers import AutoModel, AutoTokenizer
 
 # Load tokenizer and model
 model_name = "nlpaueb/legal-bert-base-uncased"
@@ -15,13 +15,14 @@ model.eval()  # Set model to evaluation mode
 
 # Load dataset (100 examples from 'crime_and_punish')
 
-def compute_embedding(text: str) -> np.ndarray:
+
+def get_embedding(text: str) -> np.ndarray:
     """
     Computes the Legal-BERT embedding for a given text.
-    
+
     Args:
         example (dict): Dictionary containing a "line" key (text data).
-    
+
     Returns:
         dict: A dictionary containing the computed embedding as a NumPy array.
     """
