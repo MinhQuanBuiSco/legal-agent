@@ -16,7 +16,7 @@ style:
 	ruff format --line-length 320  $(check_dirs)
 	isort $(check_dirs)
 
-quality:
+quanlity:
 	ruff check --line-length 119 $(check_dirs)
 	isort --check-only $(check_dirs)
 	flake8 --max-line-length 4000 $(check_dirs)	
