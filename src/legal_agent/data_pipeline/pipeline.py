@@ -1,6 +1,6 @@
 import logging
 
-from datasets import load_dataset
+from datasets import load_dataset, load_from_disk
 
 from legal_agent.data_pipeline.sentence_tokenization import \
     document_segmentation
@@ -39,17 +39,15 @@ def process_dataset():
     # Load the entire US dataset
     dataset = load_dataset("HFforLegal/case-law", split="us[:500]", verification_mode="no_checks")
     # Remove unnecessary columns
-    dataset = dataset.remove_columns(["citation", "docket_number","hash"])
+    dataset = dataset.remove_columns(["citation", "docket_number", "hash"])
     # Normalize text
     dataset = dataset.map(lambda x: {"document": normalize_text(x["document"])}, num_proc=10)
-    print(dataset)
     # Segmentation Expand rows
     dataset = dataset.map(chunk_document, batched=True)
     # NER
     dataset = dataset.map(lambda x: {"entities": " , ".join([i["word"].strip().lower() for i in get_ner(x["sentence"])])})
     # Embeddings
     dataset = dataset.map(lambda x: {"embedding": get_embedding(x["sentence"])})
-    print(dataset[:5])
     # Save the processed dataset
     dataset.save_to_disk("src/legal_agent/database/")
 

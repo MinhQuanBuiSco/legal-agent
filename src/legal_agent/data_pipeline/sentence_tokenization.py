@@ -1,12 +1,9 @@
 import logging
 
-import nltk
-# Load English NLP model
 from transformers import AutoTokenizer
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-nltk.download("punkt_tab")
 tokenizer = AutoTokenizer.from_pretrained("Jean-Baptiste/roberta-large-ner-english")
 
 
