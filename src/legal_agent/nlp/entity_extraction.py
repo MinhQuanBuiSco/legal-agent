@@ -1,6 +1,8 @@
 from transformers import (AutoModelForTokenClassification, AutoTokenizer,
                           pipeline)
+
 from legal_agent.utils.config_loader import config
+
 model_name = config["model"]["ner_model"]
 ner_tokenizer = AutoTokenizer.from_pretrained(model_name)
 ner_model = AutoModelForTokenClassification.from_pretrained(model_name)

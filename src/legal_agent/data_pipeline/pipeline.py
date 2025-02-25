@@ -11,6 +11,7 @@ from legal_agent.utils.config_loader import config
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
+
 def chunk_document(examples):
     chunks = []
     ids = []
@@ -37,18 +38,24 @@ def chunk_document(examples):
 
 def process_dataset():
     # Load the entire US dataset
+    logging.info("Loading the dataset")
     dataset = load_dataset(config["database"]["dataset_name"], split=f"us[:{config['database']['number_sample']}]", verification_mode="no_checks")
     # Remove unnecessary columns
     dataset = dataset.remove_columns(["citation", "docket_number", "hash"])
     # Normalize text
+    logging.info("Normalizing the text")
     dataset = dataset.map(lambda x: {"document": normalize_text(x["document"])}, num_proc=10)
     # Segmentation Expand rows
+    logging.info("Segmenting the documents")
     dataset = dataset.map(chunk_document, batched=True)
     # NER
+    logging.info("Extracting the entities")
     dataset = dataset.map(lambda x: {"entities": " , ".join([i["word"].strip().lower() for i in get_ner(x["sentence"])])})
     # Embeddings
+    logging.info("Extracting the embeddings")
     dataset = dataset.map(lambda x: {"embedding": get_embedding(x["sentence"])})
     # Save the processed dataset
+    logging.info("Saving the processed")
     dataset.save_to_disk("src/legal_agent/database/")
 
 

@@ -1,5 +1,6 @@
 from datasets import load_from_disk
 
+
 def test_get_embedding():
     database = load_from_disk("src/legal_agent/database/")
     test_entites = ["apple", "court"]

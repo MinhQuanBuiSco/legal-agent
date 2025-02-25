@@ -1,5 +1,7 @@
-import yaml
 import os
+
+import yaml
+
 
 class ConfigLoader:
     def __init__(self, config_file=None):
@@ -29,5 +31,6 @@ class ConfigLoader:
             if value is None:
                 return default
         return value
+
 
 config = ConfigLoader().config

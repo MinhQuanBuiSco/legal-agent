@@ -2,6 +2,7 @@ import numpy as np
 import torch
 # from datasets import load_dataset
 from transformers import AutoModel, AutoTokenizer
+
 from legal_agent.utils.config_loader import config
 
 # Load legal_tokenizer and model

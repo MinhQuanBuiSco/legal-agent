@@ -4,6 +4,7 @@ import torch
 import transformers
 from dotenv import load_dotenv
 from huggingface_hub import login
+
 from legal_agent.utils.config_loader import config
 
 load_dotenv()
@@ -16,6 +17,7 @@ pipeline = transformers.pipeline(
     model_kwargs={"torch_dtype": torch.bfloat16},
     device_map="auto",
 )
+
 
 def caselaw_sumarization(user_input: str) -> str:
     messages = [

@@ -1,11 +1,13 @@
 import logging
 
 from transformers import AutoTokenizer
+
 from legal_agent.utils.config_loader import config
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 ner_tokenizer = AutoTokenizer.from_pretrained(config["model"]["embedding_model"])
+
 
 def document_segmentation(sentence: str, max_tokens: int = 500) -> list:
     """
