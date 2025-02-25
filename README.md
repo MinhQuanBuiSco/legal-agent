@@ -16,6 +16,8 @@ source .venv/bin/activate
 ## Huggingface Token and Open API Key
 Please add the Hugging Face token and OpenAI API key in the .env_example file, then rename it to .env.
 
+* The model meta-llama/Llama-3.2-1B-Instruct requires access permission from Hugging Face. Please ensure you have obtained the necessary authorization to use it.
+
 ## Run Agent
 ```
 python src/legal_agent/agents/rag_agent.py
