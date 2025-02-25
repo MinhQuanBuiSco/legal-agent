@@ -1,15 +1,15 @@
 import logging
 
-from datasets import load_dataset, load_from_disk
+from datasets import load_dataset
 
 from legal_agent.data_pipeline.sentence_tokenization import \
     document_segmentation
 from legal_agent.data_pipeline.text_processing import normalize_text
 from legal_agent.nlp.embeddings import get_embedding
 from legal_agent.nlp.entity_extraction import get_ner
+from legal_agent.utils.config_loader import config
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-
 
 def chunk_document(examples):
     chunks = []
@@ -37,7 +37,7 @@ def chunk_document(examples):
 
 def process_dataset():
     # Load the entire US dataset
-    dataset = load_dataset("HFforLegal/case-law", split="us[:500]", verification_mode="no_checks")
+    dataset = load_dataset(config["database"]["dataset_name"], split=f"us[:{config['database']['number_sample']}]", verification_mode="no_checks")
     # Remove unnecessary columns
     dataset = dataset.remove_columns(["citation", "docket_number", "hash"])
     # Normalize text

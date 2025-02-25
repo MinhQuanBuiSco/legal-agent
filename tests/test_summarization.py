@@ -1,4 +1,4 @@
-from legal_agent.data_pipeline.sentence_tokenization import tokenizer
+from legal_agent.data_pipeline.sentence_tokenization import ner_tokenizer
 from legal_agent.data_pipeline.text_processing import normalize_text
 from legal_agent.nlp.summarization import caselaw_sumarization
 
@@ -13,7 +13,7 @@ def test_caselaw_sumarization():
     """
     normalize_user_input = normalize_text(user_input)
     result = caselaw_sumarization(normalize_user_input)
-    result_tokens = tokenizer(result, add_special_tokens=False)
+    result_tokens = ner_tokenizer(result, add_special_tokens=False)
     assert len(result_tokens) <= 512
     assert isinstance(result, str)
     assert len(result) > 0

@@ -2,10 +2,11 @@ import numpy as np
 import torch
 # from datasets import load_dataset
 from transformers import AutoModel, AutoTokenizer
+from legal_agent.utils.config_loader import config
 
-# Load tokenizer and model
-model_name = "nlpaueb/legal-bert-base-uncased"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+# Load legal_tokenizer and model
+model_name = config["model"]["embedding_model"]
+legal_tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
 
 # Move model to GPU if available
@@ -27,7 +28,7 @@ def get_embedding(text: str) -> np.ndarray:
         dict: A dictionary containing the computed embedding as a NumPy array.
     """
     # Tokenize the input text
-    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
+    inputs = legal_tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
 
     # Forward pass without gradients
     with torch.no_grad():

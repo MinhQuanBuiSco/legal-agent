@@ -4,18 +4,18 @@ import torch
 import transformers
 from dotenv import load_dotenv
 from huggingface_hub import login
+from legal_agent.utils.config_loader import config
 
 load_dotenv()
 login(token=os.getenv("HF_TOKEN"))
 
-model_id = "meta-llama/Llama-3.2-1B-Instruct"
+model_name = config["model"]["summarization_model"]
 pipeline = transformers.pipeline(
     "text-generation",
-    model=model_id,
+    model=model_name,
     model_kwargs={"torch_dtype": torch.bfloat16},
     device_map="auto",
 )
-
 
 def caselaw_sumarization(user_input: str) -> str:
     messages = [
